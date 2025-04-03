@@ -5,7 +5,7 @@ def Inicializar_Tablero():
     for n in range(5):
         pack = []
         for m in range(5):
-            pack.append(m+1)
+            pack.append("O")
         matrix.append(pack)
 
 
@@ -15,10 +15,11 @@ def Imprimir_Tablero():
     print("\033[1m\t1\t2\t3\t4\t5\033[0m")
     print("    "+"+-------"*5 + "+")
     for n in range(len(matrix)):    
-        print("\033[1m"+str(Filas[n]) + "\033[0m" + "   |   0"*len(matrix) + "   |")
+        print("\033[1m"+str(Filas[n]) + "\033[0m" + "   |   "+str(matrix[n][n])*len(matrix) + "   |")
         print("    "+"+-------"*5 + "+")
 
-            
-
+def Eliminar_Ficha(m, n): #[n, m]
+    matrix[m, n] = "."
+print(matrix)
 Inicializar_Tablero()
 Imprimir_Tablero()
